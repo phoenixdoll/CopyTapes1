@@ -1,7 +1,8 @@
 module CopyTapes
 {
     imports{
-        Base
+        Base,
+        Tsarcraft
     }
 
     item BlankTape
@@ -9,8 +10,8 @@ module CopyTapes
     Type			=	Normal,
 	DisplayCategory = Entertainment,
 	Weight			=	0.02,
-	Icon			=	Book,
+	Icon			=	Tsarcraft.Item_TCTape1,
 	DisplayName		=	Blank Tape,
-	WorldStaticModel = BookClosedGround,
+	WorldStaticModel = Tsarcraft.TCTape1,
     }
 }
