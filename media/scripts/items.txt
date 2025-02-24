@@ -10,7 +10,7 @@ module CopyTapes
     Type			=	Normal,
 	DisplayCategory = Entertainment,
 	Weight			=	0.02,
-	Icon			=	Tsarcraft.Item_TCTape1,
+	Icon			=	TCTape1,
 	DisplayName		=	Blank Tape,
 	WorldStaticModel = Tsarcraft.TCTape1,
     }
