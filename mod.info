@@ -1,0 +1,6 @@
+name=Copy Cassette Tapes
+id=CopyTapes
+poster=poster.png
+version=1.0
+require=truemusic
+description=A mod to create copies of Cassette Tapes.

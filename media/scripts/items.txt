@@ -1,0 +1,16 @@
+module CopyTapes
+{
+    imports{
+        Base
+    }
+
+    item BlankTape
+    {
+    Type			=	Normal,
+	DisplayCategory = Entertainment,
+	Weight			=	0.02,
+	Icon			=	TCTape1,
+	DisplayName		=	Blank Tape,
+	WorldStaticModel = BookClosedGround,
+    }
+}
