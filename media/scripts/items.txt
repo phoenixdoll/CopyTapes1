@@ -9,7 +9,7 @@ module CopyTapes
     Type			=	Normal,
 	DisplayCategory = Entertainment,
 	Weight			=	0.02,
-	Icon			=	TCTape1,
+	Icon			=	Book,
 	DisplayName		=	Blank Tape,
 	WorldStaticModel = BookClosedGround,
     }
