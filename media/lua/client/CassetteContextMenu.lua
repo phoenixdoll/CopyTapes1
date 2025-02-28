@@ -23,9 +23,7 @@ local function AddCassetteContextMenu(player, context, items)
             local itemType = itemObj:getType() or ""
 
             -- Debugging: Print to console
-            print("Checking item:", displayName, "| Type:", itemType)
-            print(player)
-            print(player.getInventory)
+            print("Checking item:", displayName, "| Type:", itemType, "| Player:", player, "| Inventory", player.getInventory)
 
             -- Match "Cassette" at the start of the display name (case-insensitive)
             if string.match(displayName, "^[Cc]assette") then
@@ -75,20 +73,25 @@ local function AddCassetteCopyOption(player, context, items)
 
         if itemObj then
             local displayName = itemObj:getDisplayName() or ""
-            local itemType = itemObj:getType() or ""
+
             -- Only add the option for cassettes that are not the blank cassette itself
             if string.match(displayName, "^[Cc]assette") and itemType ~= "CopyTapes.BlankTape" then
                 context:addOption("Copy Cassette", nil, function()
+                    print("displayname", displayName)
+                    local itemType = itemObj:getType() or ""
+                    print ("itemType", itemType)
+                    print("itemObj",itemObj)
                     -- Check again that there is a blank cassette available
                     local blank = inventory:FindAndReturn("CopyTapes.BlankTape")
                     if blank then
-                        -- Remove one blank cassette from the inventory
-                        inventory:RemoveOneOf("CopyTapes.BlankTape")
                         -- Create a new cassette of the same type as the clicked item
-                        local newCassette = InventoryItemFactory.CreateItem(itemObj:getType())
+                        local newCassette = InventoryItemFactory.CreateItem(itemObj:getFullType())
                         inventory:AddItem(newCassette)
                         print("Cassette copied!")
-                    else
+                        -- Remove one blank cassette from the inventory
+                        inventory:RemoveOneOf("CopyTapes.BlankTape")
+                        print("blank cassette removed")
+                        else
                         print("No blank cassette available.")
                     end
                 end)
