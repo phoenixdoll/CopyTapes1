@@ -3,4 +3,4 @@ id=CopyTapes
 poster=poster.png
 version=1.0
 require=truemusic
-description=A mod to create copies of Cassette Tapes.
+description=A mod to create copies of True Music cassette tapes. Not tested in multiplayer yet. Turn unwanted cassette tapes into copies of your favourites to give to your friends.
