@@ -15,10 +15,13 @@ local function AddCassetteContextMenu(player, context, items)
         local itemObj = item
         if not instanceof(item, "InventoryItem") and item.items then
             itemObj = item.items[1]
+        else 
+            print("not an inv item")
+            return
         end
 
-        -- Extra safety check
-        if itemObj then
+        -- Extra safety check, makes sure item isn't nil and also that it's in the inventory
+        if itemObj and itemObj:getContainer() == player:getInventory() then
             local displayName = itemObj:getDisplayName() or ""
             local itemType = itemObj:getType() or ""
 
